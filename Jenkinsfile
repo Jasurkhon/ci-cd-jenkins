@@ -23,7 +23,7 @@ pipeline {
                 sh '''
                     docker run --rm -d --name ${CONTAINER_NAME} -p ${DOCKER_PORT} ${IMAGE_NAME}
                     sleep 5 # Wait for the container to initialize
-                    curl --fail http://localhost:8000 || (echo "Service failed to respond" && exit 1)
+                    curl --fail http://0.0.0.0:8000 || (echo "Service failed to respond" && exit 1)
                 '''
             }
         }
