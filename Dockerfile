@@ -9,7 +9,7 @@ COPY ./deploy.py /app/
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # RUN python train.py
-COPY ./model.joblib /app/
+COPY ./model/model.joblib /app/model/
 
 EXPOSE 8000
 

@@ -17,7 +17,7 @@ class OutputDataModel(BaseModel):
 
 @app.on_event("startup")
 async def load_model():
-    app.model = joblib.load("model.joblib")
+    app.model = joblib.load("/app/model/model.joblib")
     app.species_mapping = {0: "setosa", 1: "versicolor", 2: "virginica"}
 
 @app.get("/", status_code=200)
